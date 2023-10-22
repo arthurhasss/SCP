@@ -1,0 +1,339 @@
+
+/*crée une variable hauteur que l'on pourra utilisé pour la disposition du menu et sous-menu*/
+*:root{
+  --hauteur-menu: 55px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: linear-gradient(45deg, #252b2c, #04212a);
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* -- MENU DEROULANT -- */
+
+
+/* disposition des menus*/
+
+/*paramètre de la barre de menu */
+.barre {
+  width: 55%;
+  margin-top: -17px;
+  margin-left: 22%;
+  font-size: 18px;
+  top: 0;
+  position:fixed; /* pour que la barre reste toujours en haut(quand on scroll)*/ 
+}
+
+/* bande de couleur en fond du menu*/
+.barre_fond {
+  position: fixed;
+  background-color: #202020;
+  margin-bottom: 20px;
+  padding: 00px;
+  top: 0px;
+  height: var(--hauteur-menu);
+  width: 100%;
+}
+
+/* logo*/
+.logo {
+  position:fixed;
+  left:40px;
+  display: flex;
+  margin: 20px;
+  width:50px;
+  height: 50px;
+}
+
+nav > ul {
+  display: flex; 
+  height: var(--hauteur-menu);
+}
+ 
+/* enlève les propriétés de listage de ul*/
+nav ul {
+  list-style-type: none;
+}
+
+/* paramètre du menu*/
+nav > ul > li {
+  position: relative;
+  flex: 1;
+}
+
+/* paramètre du texte du menu*/
+nav > ul > li > a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* couleur de tout le texte quand la souris n'est pas dessus*/
+li a {
+  text-decoration: none;
+  color: white;
+}
+
+
+/* paramètre du sous-menu*/
+.sous-menu {
+  padding:0;
+  margin-top: var(--hauteur-menu);
+  width: 100%;
+  vertical-align: top;
+  text-align: center;
+  overflow: hidden;
+  max-height: 0;
+  display: inline-block;
+}
+
+/*paramètre des textes des liens du sous-menu*/
+.sous-menu > li > a {
+  height: 40px;
+  padding-top: 20px;
+  align-items: center;
+  text-align: center;
+  display:inline-block;
+}
+
+/* quand la souris est sur les éléments du sous-menu*/
+.sous-menu > li:hover {
+  background-color: rgb(90, 89, 89);
+  
+}
+
+/* couleur texte sous-menu quand la souris est dessus */
+.sous-menu > li:hover > a {
+  color: rgb(0, 0, 0);
+}
+
+/* couleur du menu quand la souris est dessus*/
+.menu-deroulant:hover {
+  background-color: #383838;
+}
+
+/*paramètre du texte du menu quand la souris passe desus*/
+.menu-deroulant:hover a {
+  color: white;
+}
+
+/* affiche le sous-menu  quand la souris est sur le menu*/ 
+.menu-deroulant:hover .sous-menu {
+  max-height: 50em;
+  background-color: rgb(48, 48, 48);
+  border-radius: 0px 0px 10px 10px;
+  border-top: 4px solid rgb(78, 78, 78);
+}
+
+/* FIN MENU DEROULANT*/
+
+/* -- BANNIERE -- */
+
+.accueil {
+  background: url('monstre2.jpg') no-repeat center center/100%;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.accueil h1 {
+  text-shadow: 1px 4px black;
+  font-weight: 900;
+  font-size: 3em;
+}
+
+.titre_central {
+  margin-top: 20px;
+}
+
+
+.accueil .bouton_decouverte a {
+  display: block;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin-top: 70px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.accueil .bouton_decouverte a:hover {
+  background-color: white;
+  color: black;
+}
+
+
+/* -- bloc 'NOS SALLES' -- */
+
+
+.nos_salles { /*ce bloc sert a aligner, l'un au dessus de l'autre,le texte avec les logos*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  padding: 30px 50px;
+  background-color: #708e96;/*changement des couleurs ici*/
+}
+
+.texte_salles { /*comme la section est différente des autres je lui attribu des paramètres perso*/
+  padding: 10px 50px;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+}
+
+.image_salles { /*ce bloc sert a aligner, les uns à côté des autres,le logos*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.image_salles > div > img { /*ce bloc définit les propriétés et la place de chaque logo*/
+    width: 30%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 80px;
+}
+
+.image_salles > .logo_description {
+  /*ce bloc définit l'alignement en colonne des logos avec leur phrase de description*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*fin de la parti sur 'NOS SALLES'*/
+
+ 
+
+/* -- ARTICLE -- */
+
+.contenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Aligner le contenu au centre */
+  justify-content: center;
+
+  background-color: rgb(35, 34, 34);
+  border-radius: 60px;
+  padding: 25px; /* Réduire l'espacement intérieur */
+  max-width: 80%; /* Limiter la largeur du contenu à 80% de la page */
+  margin: 70px auto; /* Centrer le contenu horizontalement */
+  text-align: center;
+  color: white;
+  box-shadow: 25px 30px 25px black;
+}
+
+#pouvoir {
+  flex-direction: row-reverse;
+}
+
+.contenu p {
+  font-size: 1.3em;
+  padding: 20px;
+}
+
+.contenu img {
+  border-radius: 10px 40px 20px 50px;
+  border: 2px solid rgb(0,204,203) ;
+  margin: 20px;
+}
+
+.bulle {
+  padding: 20px 40px; /* Réduire l'espacement intérieur horizontalement */
+  margin: 30px 30px; /* Réduire l'espacement extérieur horizontalement */
+  border-radius: 50px; /* Utiliser un border-radius important pour donner une forme de bulle */
+  flex: 1;
+}
+
+
+
+/* taille des images */
+.monstre1,.monstre2,.monstre3 {
+  display: flex;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  margin-top: 50px;
+}
+
+/* -- FOOTER -- */
+
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 40px 30px 20px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+}
+
+.socialIcons a {
+  text-decoration: none;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.socialIcons a i {
+  font-size: 2em;
+  color: black;
+  opacity: 0.9;
+  transition: 0.5s;
+}
+
+.socialIcons a:hover {
+  background-color: #111;
+}
+
+.socialIcons a:hover i {
+  color: white;
+}
+
+.footerNav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 30px 0px;
+}
+
+.footerNav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+  margin: 20px;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.footerBottom {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+}
+
+.footerBottom p {
+  color: white;
+}
